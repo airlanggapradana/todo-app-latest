@@ -33,7 +33,7 @@ const UpdateTodo = ({
     e.preventDefault();
     const token = await getToken({ template: "supabase" });
     await fetch(
-      `https://todo-app-latest.vercel.app/api/todos?token=${token}&id=${todoId}`,
+      `${process.env.NEXT_PUBLIC_BASE_API_URL}/api/todos?token=${token}&id=${todoId}`,
       {
         method: "PUT",
         headers: {

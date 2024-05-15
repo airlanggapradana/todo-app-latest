@@ -18,7 +18,7 @@ async function FetchData() {
 
   const token = await getToken({ template: "supabase" });
   const response = await fetch(
-    `https://todo-app-latest.vercel.app/api/todos?token=${token}&userId=${userId}`,
+    `${process.env.NEXT_PUBLIC_BASE_API_URL}/api/todos?token=${token}&userId=${userId}`,
     {
       cache: "no-store",
     }
@@ -50,6 +50,7 @@ async function FetchData() {
 }
 
 const TodoContainer = () => {
+  if (`!${process.env.NEXT_PUBLIC_BASE_API_URL}`) return null;
   return (
     <>
       <ScrollArea className="h-[35rem] w-full rounded-md border-2 border-indigo-500 p-4">
