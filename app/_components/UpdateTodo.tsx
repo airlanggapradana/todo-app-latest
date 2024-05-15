@@ -10,7 +10,6 @@ import {
   DialogClose,
 } from "@/components/ui/dialog";
 import { CaseSensitive, FilePenLine, WholeWord } from "lucide-react";
-import { updateTodo } from "@/supabaseRequest";
 import { useState } from "react";
 import { useAuth } from "@clerk/nextjs";
 import { useRouter } from "next/navigation";
@@ -59,7 +58,7 @@ const UpdateTodo = ({
           <DialogHeader>
             <DialogTitle>Update Todo</DialogTitle>
             <DialogDescription>
-              Make changes to your todo. Click save when you're done.
+              Make changes to your todo. Click save when you are done.
             </DialogDescription>
           </DialogHeader>
 

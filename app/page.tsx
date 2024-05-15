@@ -9,7 +9,7 @@ export default function Home() {
     setTimeout(() => {
       router.push("/sign-in");
     }, 1000);
-  }, []);
+  }, [router]);
   return (
     <h1 className="text-center font-bold text-xl text-gray-300">
       Please Wait, Redirecting...

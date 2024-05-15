@@ -1,6 +1,7 @@
 import React from "react";
 import DeleteTodo from "./DeleteTodo";
 import UpdateTodo from "./UpdateTodo";
+import Image from "next/image";
 
 type TodoCardProps = {
   title?: string;
@@ -21,12 +22,14 @@ const TodoCard = ({
     <>
       <div className="rounded-xl border-2 border-gray-700 bg-gray-800">
         <div className="flex items-center justify-between p-4 sm:p-6 lg:p-8">
-          <div className="flex items-center gap-4">
+          <div className="flex items-start gap-4">
             <a href="#" className="block shrink-0">
-              <img
+              <Image
                 alt=""
                 src={image}
                 className="size-14 rounded-md object-cover"
+                width={56}
+                height={56}
               />
             </a>
 
