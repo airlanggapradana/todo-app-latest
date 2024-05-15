@@ -18,7 +18,7 @@ async function FetchData() {
 
   const token = await getToken({ template: "supabase" });
   const response = await fetch(
-    `http://localhost:3000/api/todos?token=${token}&userId=${userId}`,
+    `https://todo-app-latest.vercel.app/api/todos?token=${token}&userId=${userId}`,
     {
       cache: "no-store",
     }

@@ -32,13 +32,16 @@ const UpdateTodo = ({
   const handleUpdate = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const token = await getToken({ template: "supabase" });
-    await fetch(`http://localhost:3000/api/todos?token=${token}&id=${todoId}`, {
-      method: "PUT",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ title, contents }),
-    });
+    await fetch(
+      `https://todo-app-latest.vercel.app/api/todos?token=${token}&id=${todoId}`,
+      {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ title, contents }),
+      }
+    );
     setTitle("");
     setContents("");
     router.refresh();

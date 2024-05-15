@@ -10,9 +10,12 @@ const DeleteTodo = ({ todoId }: { todoId?: number }) => {
   const handleDelete = async (e: any) => {
     const token = await getToken({ template: "supabase" });
 
-    await fetch(`http://localhost:3000/api/todos?token=${token}&id=${todoId}`, {
-      method: "DELETE",
-    }).then((res) => res.json());
+    await fetch(
+      `https://todo-app-latest.vercel.app/api/todos?token=${token}&id=${todoId}`,
+      {
+        method: "DELETE",
+      }
+    ).then((res) => res.json());
 
     router.refresh();
   };

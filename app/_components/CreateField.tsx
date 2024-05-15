@@ -22,7 +22,7 @@ const CreateField = () => {
 
     const token = await getToken({ template: "supabase" });
     const createTodo = await fetch(
-      `http://localhost:3000/api/todos?token=${token}&userId=${userId}`,
+      `https://todo-app-latest.vercel.app/api/todos?token=${token}&userId=${userId}`,
       {
         method: "POST",
         headers: {
