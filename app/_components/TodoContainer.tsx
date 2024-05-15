@@ -50,7 +50,7 @@ async function FetchData() {
 }
 
 const TodoContainer = () => {
-  if (`!${process.env.NEXT_PUBLIC_BASE_API_URL}`) return null;
+  if (!`${process.env.NEXT_PUBLIC_BASE_API_URL}`) return null;
   return (
     <>
       <ScrollArea className="h-[35rem] w-full rounded-md border-2 border-indigo-500 p-4">
